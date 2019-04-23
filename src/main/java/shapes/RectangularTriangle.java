@@ -10,9 +10,9 @@ public class RectangularTriangle extends Shape {
 
     public RectangularTriangle(double measureItem, int angle, Colors color) {
         this.name = NAME;
-        this.measuringItemValue = measureItem;
-        this.angle = angle;
         this.color = color;
+        this.measuringItemValue = measureItem > 0 ? measureItem : 0;
+        this.angle = angle >= 0 && angle <= 90 ? angle : 0;
     }
 
     public double getArea() {

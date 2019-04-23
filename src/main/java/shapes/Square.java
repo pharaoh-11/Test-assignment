@@ -8,8 +8,8 @@ public class Square extends Shape {
 
     public Square(double measureItem, Colors color) {
         this.name = NAME;
-        this.measuringItemValue = measureItem;
         this.color = color;
+        this.measuringItemValue = measureItem > 0 ? measureItem : 0;
     }
 
     public double getArea() {
@@ -17,6 +17,6 @@ public class Square extends Shape {
     }
 
     protected String getMeasuringItem() {
-        return MEASURING_ITEM + " " + measuringItemValue;
+        return MEASURING_ITEM + ": " + measuringItemValue;
     }
 }

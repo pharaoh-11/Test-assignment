@@ -1,7 +1,5 @@
 import org.junit.Test;
-import shapes.RectangularTriangle;
-import shapes.Shape;
-import shapes.Square;
+import shapes.*;
 import shapes.colors.Colors;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -21,5 +19,17 @@ public class AreaCalculationTest {
     public void triangleAreaCalculation() {
         shape = new RectangularTriangle(2.82842712474619, 45, Colors.BLUE);
         assertThat(shape.getArea(), is(2.0));
+    }
+
+    @Test
+    public void circleAreaCalculation() {
+        shape = new Circle(2, Colors.GREEN);
+        assertThat(shape.getArea(), is(12.5664));
+    }
+
+    @Test
+    public void trapezoidAreaCalculation() {
+        shape = new Trapezoid(4, 6, 3, Colors.YELLOW);
+        assertThat(shape.getArea(), is(15.0));
     }
 }
