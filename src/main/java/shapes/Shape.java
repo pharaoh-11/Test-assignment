@@ -1,14 +1,16 @@
 package shapes;
 
-public abstract class Shape {
-    protected String name;
-    protected double measuringItemValue;
-    protected String color;
+import shapes.colors.Colors;
 
-    protected abstract void getName();
-    protected abstract double getArea();
-    protected abstract String getMeasuringItem();
-    protected abstract void getColor();
+public abstract class Shape {
+    String name;
+    double measuringItemValue;
+    Colors color;
+
+    abstract String getName();
+    public abstract double getArea();
+    abstract String getMeasuringItem();
+    abstract String getColor();
 
 
     public void draw() {

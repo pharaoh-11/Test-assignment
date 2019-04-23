@@ -1,23 +1,30 @@
 package shapes;
 
+import shapes.colors.Colors;
+
 public class Square extends Shape {
-    public Square() {
+    private final static String NAME = "square";
+    private final static String MEASURING_ITEM = "square side";
 
+    public Square(double measureItem, Colors color) {
+        this.name = NAME;
+        this.measuringItemValue = measureItem;
+        this.color = color;
     }
 
-    protected void getName() {
-
+    protected String getName() {
+        return name;
     }
 
-    protected double getArea() {
-        return 0;
+    public double getArea() {
+        return measuringItemValue * measuringItemValue;
     }
 
     protected String getMeasuringItem() {
-        return null;
+        return MEASURING_ITEM + " " + measuringItemValue;
     }
 
-    protected void getColor() {
-
+    protected String getColor() {
+        return color.getColor();
     }
 }
