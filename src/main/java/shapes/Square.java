@@ -12,19 +12,11 @@ public class Square extends Shape {
         this.color = color;
     }
 
-    protected String getName() {
-        return name;
-    }
-
     public double getArea() {
         return measuringItemValue * measuringItemValue;
     }
 
     protected String getMeasuringItem() {
         return MEASURING_ITEM + " " + measuringItemValue;
-    }
-
-    protected String getColor() {
-        return color.getColor();
     }
 }

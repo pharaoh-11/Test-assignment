@@ -7,10 +7,16 @@ public abstract class Shape {
     double measuringItemValue;
     Colors color;
 
-    abstract String getName();
     public abstract double getArea();
     abstract String getMeasuringItem();
-    abstract String getColor();
+
+    String getName() {
+        return name;
+    }
+
+    String getColor() {
+        return color.getColor();
+    }
 
 
     public void draw() {

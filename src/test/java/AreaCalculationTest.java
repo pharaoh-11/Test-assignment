@@ -1,4 +1,5 @@
 import org.junit.Test;
+import shapes.RectangularTriangle;
 import shapes.Shape;
 import shapes.Square;
 import shapes.colors.Colors;
@@ -16,4 +17,9 @@ public class AreaCalculationTest {
         assertThat(shape.getArea(), is(25.0));
     }
 
+    @Test
+    public void triangleAreaCalculation() {
+        shape = new RectangularTriangle(2.82842712474619, 45, Colors.BLUE);
+        assertThat(shape.getArea(), is(2.0));
+    }
 }
