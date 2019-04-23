@@ -1,4 +1,5 @@
 import org.junit.Test;
+import shapes.Shape;
 import shapes.Square;
 import shapes.colors.Colors;
 
@@ -7,9 +8,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class AreaCalculationTest {
 
+    private Shape shape;
+
     @Test
     public void squareAreaCalculation() {
-        Square square = new Square(5, Colors.BLACK);
-        assertThat(square.getArea(), is(25.0));
+        shape = new Square(5, Colors.BLACK);
+        assertThat(shape.getArea(), is(25.0));
     }
+
 }
