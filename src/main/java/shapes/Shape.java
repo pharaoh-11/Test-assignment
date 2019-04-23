@@ -4,22 +4,34 @@ import shapes.colors.Colors;
 
 public abstract class Shape {
     String name;
-    double measuringItemValue;
     Colors color;
 
     public abstract double getArea();
-    abstract String getMeasuringItem();
+    abstract void drawMeasuringItems();
 
-    String getName() {
-        return name;
+    void drawName() {
+        System.out.print("Figure: " + name);
+    }
+//
+//    String getColor() {
+//        return color.getColor();
+//    }
+
+    private void drawArea() {
+        System.out.print("area: " + getArea());
     }
 
-    String getColor() {
-        return color.getColor();
+    private void drawColor() {
+        System.out.print("color: " + color.getColor());
     }
-
 
     public void draw() {
-
+        drawName();
+        System.out.print(", ");
+        drawArea();
+        System.out.print(", ");
+        drawMeasuringItems();
+        System.out.print(", ");
+        drawColor();
     }
 }

@@ -4,19 +4,21 @@ import shapes.colors.Colors;
 
 public class Square extends Shape {
     private final static String NAME = "square";
-    private final static String MEASURING_ITEM = "square side";
+    private final static String SQUARE_SIDE = "square side";
 
-    public Square(double measureItem, Colors color) {
+    private double squareSide;
+
+    public Square(double squareSide, Colors color) {
         this.name = NAME;
         this.color = color;
-        this.measuringItemValue = measureItem > 0 ? measureItem : 0;
+        this.squareSide = squareSide > 0 ? squareSide : 0;
     }
 
     public double getArea() {
-        return measuringItemValue * measuringItemValue;
+        return squareSide * squareSide;
     }
 
-    protected String getMeasuringItem() {
-        return MEASURING_ITEM + ": " + measuringItemValue;
+    void drawMeasuringItems() {
+        System.out.print(SQUARE_SIDE + ": " + squareSide);
     }
 }

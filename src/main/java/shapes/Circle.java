@@ -4,19 +4,21 @@ import shapes.colors.Colors;
 
 public class Circle extends Shape {
     private final static String NAME = "circle";
-    private final static String MEASURING_ITEM = "radius";
+    private final static String RADIUS = "radius";
 
-    public Circle(double measureItem, Colors color) {
+    private double radius;
+
+    public Circle(double radius, Colors color) {
         this.name = NAME;
         this.color = color;
-        this.measuringItemValue = measureItem > 0 ? measureItem : 0;
+        this.radius = radius > 0 ? radius : 0;
     }
 
     public double getArea() {
-        return Math.rint(measuringItemValue * measuringItemValue * Math.PI * 10000) / 10000;
+        return Math.rint(radius * radius * Math.PI * 10000) / 10000;
     }
 
-    String getMeasuringItem() {
-        return MEASURING_ITEM + ": " + measuringItemValue;
+    void drawMeasuringItems() {
+        System.out.print(RADIUS + ": " + radius);
     }
 }

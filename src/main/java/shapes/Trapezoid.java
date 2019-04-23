@@ -4,7 +4,9 @@ import shapes.colors.Colors;
 
 public class Trapezoid extends Shape {
     private final static String NAME = "trapezoid";
-    private final static String MEASURING_ITEM = "radius";
+    private final static String TOP_BASE = "top base";
+    private final static String BOTTOM_BASE = "bottom base";
+    private final static String HEIGHT = "height";
 
     private double topBase;
     private double bottomBase;
@@ -22,7 +24,9 @@ public class Trapezoid extends Shape {
         return (topBase + bottomBase) * 0.5 * height;
     }
 
-    String getMeasuringItem() {
-        return null;
+    void drawMeasuringItems() {
+        System.out.print(TOP_BASE + ": " + topBase + ", " +
+                BOTTOM_BASE + ": " + bottomBase + ", " +
+                HEIGHT + ": " + height);
     }
 }
