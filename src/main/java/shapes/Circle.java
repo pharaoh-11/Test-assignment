@@ -13,7 +13,11 @@ public class Circle extends Shape {
     public Circle(double radius, Colors color) {
         this.name = NAME;
         this.color = color;
-        this.radius = radius > 0 ? radius : 0;
+        if(radius > 0) {
+            this.radius = radius;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
     public double getArea() {

@@ -1,7 +1,6 @@
 package shapes;
 
 import org.junit.Test;
-import shapes.*;
 import shapes.colors.Colors;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -33,5 +32,10 @@ public class AreaCalculationTest {
     public void trapezoidAreaCalculation() {
         shape = new Trapezoid(4, 6, 3, Colors.YELLOW);
         assertThat(shape.getArea(), is(15.0));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void IllegalArgumentExceptionTest() throws IllegalArgumentException {
+        shape = new Trapezoid(-4, 0, 3, Colors.YELLOW);
     }
 }

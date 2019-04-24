@@ -5,6 +5,7 @@ import shapes.colors.Colors;
 import static tools.FixMeasureOfInaccuracy.fixInaccuracy;
 
 public class RectangularTriangle extends Shape {
+    private static final int MAX_ANGLE = 89;
     private final static String NAME = "rectangular triangle";
     private final static String HYPOTENUSE = "hypotenuse";
     private final static String ANGLE = "angle";
@@ -15,8 +16,12 @@ public class RectangularTriangle extends Shape {
     public RectangularTriangle(double hypotenuse, int angle, Colors color) {
         this.name = NAME;
         this.color = color;
-        this.hypotenuse = hypotenuse > 0 ? hypotenuse : 0;
-        this.angle = angle >= 0 && angle < 90 ? angle : 0;
+        if(hypotenuse > 0 && angle >= 0 && angle <= MAX_ANGLE) {
+            this.hypotenuse = hypotenuse;
+            this.angle = angle;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
     public double getArea() {

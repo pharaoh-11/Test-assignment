@@ -13,7 +13,11 @@ public class Square extends Shape {
     public Square(double squareSide, Colors color) {
         this.name = NAME;
         this.color = color;
-        this.squareSide = squareSide > 0 ? squareSide : 0;
+        if(squareSide > 0) {
+            this.squareSide = squareSide;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
     public double getArea() {

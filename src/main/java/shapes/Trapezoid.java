@@ -16,10 +16,14 @@ public class Trapezoid extends Shape {
 
     public Trapezoid(double topBase, double bottomBase, double height, Colors color) {
         this.name = NAME;
-        this.topBase = topBase > 0 ? topBase : 0;
-        this.bottomBase = bottomBase > 0 ? bottomBase : 0;
-        this.height = height > 0 ? height : 0;
         this.color = color;
+        if(topBase > 0 && bottomBase > 0 && height > 0) {
+            this.topBase = topBase;
+            this.bottomBase = bottomBase;
+            this.height = height;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
     public double getArea() {
