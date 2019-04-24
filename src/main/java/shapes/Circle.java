@@ -2,6 +2,8 @@ package shapes;
 
 import shapes.colors.Colors;
 
+import static tools.FixMeasureOfInaccuracy.fixInaccuracy;
+
 public class Circle extends Shape {
     private final static String NAME = "circle";
     private final static String RADIUS = "radius";
@@ -15,7 +17,7 @@ public class Circle extends Shape {
     }
 
     public double getArea() {
-        return Math.rint(radius * radius * Math.PI * 10000) / 10000;
+        return fixInaccuracy(radius * radius * Math.PI);
     }
 
     void drawMeasuringItems() {

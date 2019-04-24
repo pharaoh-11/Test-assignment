@@ -2,6 +2,8 @@ package shapes;
 
 import shapes.colors.Colors;
 
+import static tools.FixMeasureOfInaccuracy.fixInaccuracy;
+
 public class Trapezoid extends Shape {
     private final static String NAME = "trapezoid";
     private final static String TOP_BASE = "top base";
@@ -21,7 +23,7 @@ public class Trapezoid extends Shape {
     }
 
     public double getArea() {
-        return (topBase + bottomBase) * 0.5 * height;
+        return fixInaccuracy((topBase + bottomBase) * 0.5 * height);
     }
 
     void drawMeasuringItems() {

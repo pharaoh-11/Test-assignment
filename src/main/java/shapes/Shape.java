@@ -6,7 +6,7 @@ public abstract class Shape {
     String name;
     Colors color;
 
-    public abstract double getArea();
+    abstract double getArea();
     abstract void drawMeasuringItems();
 
     void drawName() {

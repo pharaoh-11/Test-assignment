@@ -1,3 +1,5 @@
+package shapes;
+
 import org.junit.Test;
 import shapes.*;
 import shapes.colors.Colors;
@@ -24,7 +26,7 @@ public class AreaCalculationTest {
     @Test
     public void circleAreaCalculation() {
         shape = new Circle(2, Colors.GREEN);
-        assertThat(shape.getArea(), is(12.5664));
+        assertThat(shape.getArea(), is(12.56637));
     }
 
     @Test

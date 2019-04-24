@@ -2,6 +2,8 @@ package shapes;
 
 import shapes.colors.Colors;
 
+import static tools.FixMeasureOfInaccuracy.fixInaccuracy;
+
 public class Square extends Shape {
     private final static String NAME = "square";
     private final static String SQUARE_SIDE = "square side";
@@ -15,7 +17,7 @@ public class Square extends Shape {
     }
 
     public double getArea() {
-        return Math.rint(squareSide * squareSide * 100000) / 100000;
+        return fixInaccuracy(squareSide * squareSide);
     }
 
     void drawMeasuringItems() {

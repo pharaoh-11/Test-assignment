@@ -3,8 +3,10 @@ import shapes.colors.Colors;
 
 import java.util.ArrayList;
 
+import static tools.FixMeasureOfInaccuracy.fixInaccuracy;
+
 public class ListBuilder {
-    private static final int MAX_ANGLE = 89;
+    private static final int MAX_ANGLE = 88;
 
     private ArrayList<Shape> shapes;
 
@@ -22,30 +24,33 @@ public class ListBuilder {
 
     private void buildSquares(int count) {
         for(int i = 0; i < count; i++) {
-            shapes.add(new Square(Math.rint(Math.random() * 100) / 10, getColor()));
+            shapes.add(new Square(newLeg(), newColor()));
         }
     }
 
     private void buildTriangles(int count) {
         for(int i = 0; i < count; i++) {
-            shapes.add(new RectangularTriangle(Math.rint(Math.random() * 100) / 10, (int) (Math.random() * MAX_ANGLE), getColor()));
+            shapes.add(new RectangularTriangle(newLeg(), (int) (Math.random() * MAX_ANGLE + 1), newColor()));
         }
     }
 
     private void buildCircles(int count) {
         for(int i = 0; i < count; i++) {
-            shapes.add(new Circle(Math.rint(Math.random() * 100) / 10, getColor()));
+            shapes.add(new Circle(newLeg(), newColor()));
         }
     }
 
     private void buildTrapezoids(int count) {
         for(int i = 0; i < count; i++) {
-            shapes.add(new Trapezoid(Math.rint(Math.random() * 100) / 10,
-                    Math.rint(Math.random() * 100) / 10,Math.rint(Math.random() * 100) / 10, getColor()));
+            shapes.add(new Trapezoid(newLeg(), newLeg(),newLeg(), newColor()));
         }
     }
 
-    private Colors getColor() {
+    private Colors newColor() {
         return Colors.values()[(int) (Math.random() * Colors.values().length)];
+    }
+
+    private double newLeg() {
+        return fixInaccuracy(Math.rint(Math.random() * 100) / 10 + 0.1);
     }
 }
