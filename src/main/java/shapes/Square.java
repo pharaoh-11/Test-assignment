@@ -15,7 +15,7 @@ public class Square extends Shape {
     }
 
     public double getArea() {
-        return squareSide * squareSide;
+        return Math.rint(squareSide * squareSide * 100000) / 100000;
     }
 
     void drawMeasuringItems() {

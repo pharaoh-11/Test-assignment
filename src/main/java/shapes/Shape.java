@@ -12,10 +12,6 @@ public abstract class Shape {
     void drawName() {
         System.out.print("Figure: " + name);
     }
-//
-//    String getColor() {
-//        return color.getColor();
-//    }
 
     private void drawArea() {
         System.out.print("area: " + getArea());
